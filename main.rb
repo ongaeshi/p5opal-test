@@ -1,25 +1,25 @@
-LINE_RADIUS = 8
-LINE_SPEED = 3
+WEBGL = 'webgl'
 
 def setup
-  P5.createCanvas(480, 240)
-  P5.background(96)
-  P5.noStroke
-
-  @x = @y = LINE_RADIUS
-  @vx = @vy = LINE_SPEED
+  P5.createCanvas(710, 400, WEBGL)
 end
 
 def draw
-  P5.fill(96, 8)
-  P5.rect(0, 0, P5.width, P5.height)
+  P5.background(100)
 
-  @x += @vx
-  @y += @vy
+  P5.noStroke()
+  P5.fill(50)
+  P5.push()
+  P5.translate(-275, 175)
+  P5.rotateY(1.25)
+  P5.rotateX(-0.9)
+  P5.box(100)
+  P5.pop()
 
-  @vx *= -1 if @x <= LINE_RADIUS || @x >= P5.width - LINE_RADIUS
-  @vy *= -1 if @y <= LINE_RADIUS || @y >= P5.height - LINE_RADIUS
-
-  P5.fill(255, 204, 0)
-  P5.ellipse(@x, @y, LINE_RADIUS * 2, LINE_RADIUS * 2)
+  P5.noFill()
+  P5.stroke(255)
+  P5.push()
+  P5.translate(500, P5.height * 0.35, -200)
+  P5.sphere(300)
+  P5.pop()
 end

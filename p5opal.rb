@@ -1,4 +1,5 @@
 # backtick_javascript: true
+# https://tkitao.hatenablog.com/entry/2015/12/19/192523
 
 module P5
   def self.method_missing(name, *args)
