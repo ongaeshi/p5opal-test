@@ -1,7 +1,6 @@
 # backtick_javascript: true
+
 # https://tkitao.hatenablog.com/entry/2015/12/19/192523
-
-
 def method_missing(name, *args)
   %x{
     obj = window[name];
@@ -18,3 +17,6 @@ end
   window.draw = function() { Opal.top.$draw(); };
 }
 
+module P5
+  Vector = %x{p5.Vector}
+end
